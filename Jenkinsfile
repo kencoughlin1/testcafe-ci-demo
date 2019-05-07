@@ -1,12 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Install Testcafe') {
-      stage('Build') {
+    stage('Build') {
       steps {
         sh 'npm install'
       }
-      steps {
+    }
+    stage('Install Testcafe') {
+        steps {
         sh 'npm install testcafe testcafe-reporter-xunit'
       }
     }
